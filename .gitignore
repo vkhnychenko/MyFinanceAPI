@@ -1,0 +1,10 @@
+venv
+__pycache__
+.idea
+.data
+.env
+.env.db
+test.py
+test_cg.py
+test_moralis.py
+test_web3.py

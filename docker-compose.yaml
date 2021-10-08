@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    container_name: 'crypto_finance_api'
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    container_name: 'crypto_finance_database'
+    restart: always
+    ports:
+      - 32700:5432
+    volumes:
+      - .data:/var/lib/postgresql/data
+    env_file:
+      - .env.db
+networks:
+  default:
+    name: crypto_finance
